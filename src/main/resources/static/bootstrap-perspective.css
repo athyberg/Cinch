@@ -1,0 +1,402 @@
+html, body, .perspective, .perspective > .slot, .slot-split > .section, .view { 
+    height: 100% 
+}
+.perspective, .slot {
+    display: block;
+}
+/* @media (min-width: 768px) { */
+/*     html:not([mobile]) body { */
+/*         padding-top: 65px; */
+/*     } */
+/*     html:not([mobile]) .navbar { */
+/*         position: fixed; */
+/*         top: 0; */
+/*         left: 0; */
+/*         right: 0; */
+/*         border-radius: 0; */
+/*         border-width: 0 0 1px; */
+/*         z-index: 2147483647; max int */
+/*     } */
+/* } */
+body {
+    padding-top: 65px;
+}
+.no-padding {
+    padding: 0 !important;
+}
+.no-margin {
+    margin: 0 !important;
+}
+.no-border {
+    border: 0 !important;
+    box-shadow: none !important; 
+}
+.no-background {
+    background: 0 !important;
+}
+.no-click {
+  pointer-events: none;
+}
+*[fit] {
+    height: 100%;
+}
+.tab-content .panel-default {
+    background: 0;
+}
+/* .tab-content .panel-heading { */
+/*     display: none; */
+/* } */
+.tab-content .panel-body {
+    border: 0 !important;
+}
+
+.dialog > .view {
+    padding: 0;
+    height: auto !important;
+}
+.tab-content .panel-body {
+    padding: 0;
+    border: 0;
+}
+.navbar {
+    margin-bottom: 0
+}
+a {
+  -webkit-user-select: none; /* disable selection/Copy of UIWebView */
+  -webkit-touch-callout: none; /* disable the IOS popup when long-press on a link */
+}
+.slot-split-horizontal .slot {
+}
+.slot-split {
+    border: 0;
+}
+.section > .view {
+/*     display: none; */
+}
+.slot > .section {
+    position: relative; top: 0; bottom: 0; left: 0; right: 0;
+/*     overflow: hidden; */
+}
+.tab-content .panel { 
+    border: 0;
+}
+@media (min-width: 768px) {
+    html:not([mobile]) .slot > .section {
+        position: absolute; top: 0; bottom: 0; left: 0; right: 0;
+        overflow: hidden;
+    }
+    html:not([mobile]) .perspective {
+        overflow: hidden;
+    }
+    html:not([mobile]) .section > .content .panel-default, 
+    html:not([mobile]) .section > .content .panel-collapse, 
+/*     html:not([mobile]) .section > .content .panel-body { */
+/*         height: 100%; */
+/*     } */
+/*     html:not([mobile]) .tab-content .collapse { */
+/*         display: block !important; */
+/*     } */
+}
+.slot.footer {
+    margin: 0 -15px -15px;
+}
+@media (min-width: 768px) {
+    html:not([mobile]) .slot-split > .section {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+    }
+    html:not([mobile]) .slot-split-vertical > .section {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+    html:not([mobile]) .slot-split-horizontal > .section {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+    }
+    html:not([mobile]) .slot {
+        position: relative;
+        -webkit-box-flex: 1;
+            -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
+    } 
+}
+.perspective {
+    position: relative;
+/*     overflow: hidden; */
+}
+.view {
+    display: block;
+    padding: 15px;
+/*     overflow: auto; */
+}
+.slot-tab ul.nav-tabs {
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 57px; padding: 15px 0 0; margin: 0 15px;
+    z-index: 1;
+}
+.section > .content {
+    height: 100%;
+}
+.slot-tab .tab-content {
+    position: relative;
+    padding-top: 57px; 
+}
+html[mobile] .slot-tab .tab-content {
+    padding-top: 0; 
+}
+
+.slot.scroll > .section > .content > .view {
+    overflow: auto;
+}
+.slot.scroll-horizontal > .section > .content > .view {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.slot.scroll-vertical > .section > .content > .view {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* --- DRAG n DROP --- */
+@media (min-width: 768px) {
+    html:not([mobile]) .draghandle {
+        position: absolute; 
+        z-index: 1;
+    }
+    html:not([mobile]) .slot-split-horizontal > .section > .slot > .draghandle {
+        cursor: ew-resize;
+        top: 0; bottom: 0; left: -10px; width: 20px;
+    }
+    html:not([mobile]) .slot-split-vertical > .section > .slot > .draghandle {
+        cursor: ns-resize;
+        left: 0; right: 0; top: -10px; height: 20px;
+    }
+    html:not([mobile]) .draghandle:after {
+        position: absolute;
+        content: "";
+        z-index: -1;
+        border: solid rgba(0, 0, 0, 0.2);
+    }
+    html:not([mobile]) .draghandle:hover:after {
+        border-color: #337ab7;
+        box-shadow: 0 0 10px;
+    }
+    html:not([mobile]) .slot-split-horizontal > .section > .slot > .draghandle:after {
+        top: 0; bottom: 0; left: 50%;
+        border-width: 0 0 0 1px;
+    }
+    html:not([mobile]) .slot-split-vertical > .section > .slot > .draghandle:after {
+        left: 0; right: 0; top: 50%;
+        border-width: 1px 0 0 0;
+    }
+    .tab-content > .view .panel-heading {
+        display: none;
+    }
+}
+#perspective-drag-widget {
+    position: absolute; top: 0; bottom: 0; left: 0; right: 0;
+}
+.dialog {
+    position: absolute !important;
+    top: 0; left: -9999px; 
+    max-width: 85%;
+    min-height: 100px; 
+    z-index: 10;
+    -webkit-transition: opacity 500ms;
+            transition: opacity 500ms;
+    height: auto !important;
+    width: auto !important;
+}
+.dialog:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.2;
+    z-index: -1;
+}
+@media (min-width: 768px) {
+    html:not([mobile]) .dialog:before {
+        display: none;
+    }
+}
+.dialog-title {
+    margin: 0;
+    line-height: 1.42857143;
+    white-space: nowrap;
+    padding-right: 25px;
+}
+/* .panel-dialog { */
+/*     height: 100%; */
+/* }  */
+.dialog > .panel {
+    margin-bottom: 0;
+    border: 1px solid #ccc;
+    -webkit-transition: box-shadow 100ms;
+            transition: box-shadow 100ms;
+    -webkit-transition-timing-function: ease-in;
+            transition-timing-function: ease-in;
+/*     height: 100%; */
+}
+.dialog .panel-heading {
+/*     border-bottom-color: #ddd; */
+    cursor: move;
+}
+.dialog .panel-body {
+/*     height: calc(100% - 46px); */
+/*     padding: 0; */
+    margin: 0;
+}
+
+.dialog button.minimize {
+    -webkit-appearance: none;
+    padding: 0 15px 0 0;
+    cursor: pointer;
+    background: 0 0;
+    border: 0;
+}
+
+.dialog .minimize {
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
+}
+.dialog .minimize:focus, .minimize:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+
+
+.panel-footer {
+    text-align: right;
+    margin: 15px -15px -15px;
+    height: 59px;
+}
+.panel-body > .view {
+    padding: 15px;
+}
+.slot:not(.slot-split).over {
+    border: 1px dashed black;
+}
+li > button.close {
+    float: none;
+    position: absolute; top: -3px; right: 4px;
+    display: none;
+    z-index: 1;
+}
+li:hover > button.close {
+    display: inherit;
+}
+.dialog.raised .panel-default {
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+.dialog.raised.ui-draggable-dragging .panel-default {
+    box-shadow: none;
+}
+.slot-tray > .section, .slot-split > .section {
+    overflow: visible;
+}
+.tray-content > .panel {
+    height: 100%;
+    border: 0;
+}
+.contextmenu {
+    position: absolute;
+    z-index: 10;
+    display: none;
+}
+.contextmenu button {
+    margin: 0 2px;
+}
+.accepting {
+    border: 1px dashed #ccc;
+}
+.accepting-hover {
+/*     background-color: #eee; */
+    opacity: 0.5;
+}
+html[mobile] .hidden-xs {
+    display: none !important;
+}
+html[mobile] .visible-xs {
+    display: block !important;
+}
+html[mobile] .tab-content > .tab-pane {
+    display: block;
+}
+html[mobile] .tab-content > .tab-pane {
+    opacity: 1;
+}
+.dialog .visible-xs {
+    display: block !important;
+}
+@media (max-width: 767px) {
+    .slot-tab .tab-content {
+        padding-top: 0 !important;
+    }
+    .tab-content .panel-body {
+        padding: 15px 0;
+    }
+    .panel-default.collapse {
+        display: block !important;
+    }
+    .fade {
+        opacity: 1 !important;
+    }
+    .tab-content > .tab-pane {
+        display: block !important;
+    }
+    .view {
+        padding: 5px 15px;
+    }
+}
+.table-condensed>tbody>tr>td, 
+.table-condensed>tbody>tr>th, 
+.table-condensed>tfoot>tr>td, 
+.table-condensed>tfoot>tr>th, 
+.table-condensed>thead>tr>td, 
+.table-condensed>thead>tr>th {
+    padding: 5px 0 5px 5px;
+}
+
+.tray-content > .panel-default > .panel-footer {
+    display: flex;
+    text-align: inherit;
+}
+
+.tray-content .view .panel-heading {
+    display: block !important;
+    padding: 0;
+    border: 0;
+}
+.tray-content .panel-default {
+    border: 0;
+    background: 0;
+}
+
+.tray-content .view:not(.ignore) {
+    flex: 1 1 auto;
+    padding: 0;
+}
+

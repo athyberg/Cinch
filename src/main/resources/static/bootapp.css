@@ -1,0 +1,162 @@
+cwf-table, 
+cwf-table-toolbar {
+    display: block;
+}
+
+#dashboard.perspective {
+/*     top: -10px; */
+}
+
+
+.dropdown.open .caret {
+    transform: rotateZ(180deg);
+} 
+
+.nav-pills .dropdown-menu.manage ul {
+    padding: 0 20px;
+    list-style-type: none;
+}
+
+
+
+
+.slot-tray .content li {
+    margin-left: 15px;
+}
+
+.slot-tray .view:not(.footer) {
+    display: none;
+}
+
+
+/* VIEW */
+
+#dashboard cwf-custom-view .panel-body,
+#dashboard cwf-custom-view {
+    padding: 1px;
+}
+
+#dashboard .panel-heading {
+    font-size: large;
+}
+.view {
+/*     overflow: hidden; */
+}
+.perspective > .view,
+.view.ignore {
+    display: none;
+}
+/* .view.active > div:first-child { */
+/*     position: absolute; */
+/*     background-color: cadetblue; */
+/*     opacity: 0.1; */
+/*     bottom: 15px; */
+/*     right: 15px; */
+/*     padding: 10px; */
+/*     border-radius: 5px; */
+/*     transition: opacity 1s; */
+/*     z-index: 1; */
+/*     display: none; */
+/* } */
+/* .view.active > div:first-child:hover { */
+/*     opacity: 0.8; */
+/*     z-index: 2; */
+/* } */
+.view.minimized.pull-left {
+    margin-left: 15px;
+}
+
+/* CWF-FOOTER */
+.view.footer {
+    padding: 7px 0;
+}
+
+
+/* CWF-TABLE */
+cwf-table .scroll {
+    position: relative;
+    height: calc(100% - 10px);
+}
+cwf-table .crop {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+.table-perspective {
+    position: absolute;
+    margin-bottom: 0;
+    table-layout: fixed;
+}
+.table th {
+    width: 100px;
+}
+.table th:last-child {
+    width: auto;
+}
+.table-condensed>tbody>tr>td, 
+.table-condensed>tbody>tr>th, 
+.table-condensed>tfoot>tr>td, 
+.table-condensed>tfoot>tr>th, 
+.table-condensed>thead>tr>td, 
+.table-condensed>thead>tr>th {
+    padding: 2px 0 2px 5px;
+}
+th > div, td > div {
+    overflow: hidden;
+}
+
+.scrollbar {
+    position: absolute;
+    border-radius: 5px;
+    margin: 0;
+    opacity: 0.3;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: opacity 1s;
+    display: none;
+}
+.view.active .scrollbar.scrollbar-vertical {
+    right: -10px;
+    width: 8px;
+    height: initial;
+}
+.view.active .scrollbar.scrollbar-horizontal {
+    left: 0;
+    bottom: -10px;
+    height: 8px;
+}
+.scrollbar > div {
+    position: absolute;
+    border-radius: 5px;
+    background-color: #337ab7;
+}
+.scrollbar-horizontal > div {
+    height: 8px;
+    min-width: 20px;
+}
+.scrollbar-vertical > div {
+    width: 8px;
+    min-height: 20px;
+}
+
+.dropdown-menu > li > .checkbox {
+    padding: 3px 20px;
+    margin: 0;
+}
+
+.context-menu {
+    position: absolute;
+    z-index: 2000;
+    display: block;
+}
+
+
+/* Highcharts */
+rect.highcharts-background {
+    fill: transparent;
+}
+
+text {
+    fill: #ddd !important;
+}

@@ -1,0 +1,32 @@
+.StartPerspective {
+  padding-top: 0;
+}
+.StartPerspective .logo {
+  background-image: url(../img/iguana_chameleons-1.jpg);
+  background-position: center;
+  background-size: contain;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+}
+.StartPerspective .view-welcome {
+  background-image: url(../img/iguan-start-3.jpg);
+  background-repeat: no-repeat;
+  background-position: 100%;
+  background-size: cover;
+}
+.StartPerspective [type=checkbox] + label {
+  padding-left: 0;
+}
+.StartPerspective [for=password] {
+  position: static;
+}
+.StartPerspective .form-group label[for] {
+  display: none;
+}
+.StartPerspective .footer .tray-content {
+  text-align: center;
+  line-height: 28px;
+  border-top: 1px solid #ddd;
+}

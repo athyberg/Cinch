@@ -1,0 +1,27 @@
+<cwf-table-toolbar [model]="model" (action)="onAction($event)"></cwf-table-toolbar>
+<div style="position:relative" (mouseenter)="onMouseEnter($event)" (mouseleave)="onMouseLeave($event)">
+  <div class="crop" fi-t>
+    <table class="table table-perspective table-striped table-condensed table-hover table-bordered" (mousewheel)="onMouseWheel($event)">
+      <thead>
+        <tr #headerRow>
+          <th *ngFor="let text of header; let i = index" [attr.class]="getStyle(i)"><div class="text-nowrap"><span>{{ text | translate }}</span></div></th>
+          <th><div></div></th> <!-- last header cell must be empty -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr #bodyRow *ngFor="let row of rows">
+          <td *ngFor="let text of row; let i = index" [attr.class]="getStyle(i)"><div class="text-nowrap">{{ text }}</div></td>
+          <td><div></div></td>
+        </tr>
+      </tbody>
+      <tfoot *ngIf="footer">
+        <tr>
+          <td *ngFor="let text of footer; let i = index" [attr.class]="getStyle(i)"><div class="text-nowrap">{{ text }}</div></td>
+          <td><div></div></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <cwf-scrollbar-vertical (scroll)="onScrollVertical($event)"></cwf-scrollbar-vertical>
+  <cwf-scrollbar-horizontal (scroll)="onScrollHorizontal($event)"></cwf-scrollbar-horizontal>
+</div>
